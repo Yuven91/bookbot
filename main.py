@@ -8,8 +8,17 @@ def main():
     text = get_book_text("books/frankenstein.txt")
     count = get_word_count(text)
     lettercount = letter_count(text)
-    print(lettercount)
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
     print(f"Found {count} total words")
+    print("--------- Character Count -------")
+    for key, value in lettercount.items():
+        if key.isalpha():
+            print(f"{key}: {value}")
+        else:
+            continue
+    print("============= END ===============")
 
 if __name__ == "__main__":
     main()
